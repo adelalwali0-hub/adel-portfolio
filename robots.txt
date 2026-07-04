@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://adelalwali0-hub.github.io/adel-portfolio/sitemap.xml
