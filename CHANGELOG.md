@@ -4,6 +4,15 @@ All notable changes to this project are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project uses [Semantic Versioning](https://semver.org/).
 
+## [1.1.0] — 2026-07-04
+
+### Added
+
+- `vetrix-iq.html` — a dedicated SaaS landing page for VetriX•IQ targeting oil & gas engineering companies: hero, problem statement, solution (the four platform modules), features, illustrative product-preview mockups, benefits, an FAQ accordion, a demo-request form, and a closing contact CTA
+- A backend-free demo-request form: submitting it builds a prefilled `mailto:` link from the entered fields (name, work email, company, role, area of interest, message) and opens the visitor's email client; degrades to a native `mailto:` form action if JavaScript is disabled
+- Cross-links between the two pages: the portfolio's VetriX•IQ section now links out to `vetrix-iq.html`, and the landing page links back to the portfolio
+- A second entry in `sitemap.xml` for the new page
+
 ## [1.0.0] — 2026-07-04
 
 First stable release. The site was rebuilt from a single-file design draft into a complete, production-ready portfolio in two passes.
