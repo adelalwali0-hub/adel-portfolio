@@ -12,6 +12,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - A backend-free demo-request form: submitting it builds a prefilled `mailto:` link from the entered fields (name, work email, company, role, area of interest, message) and opens the visitor's email client; degrades to a native `mailto:` form action if JavaScript is disabled
 - Cross-links between the two pages: the portfolio's VetriX•IQ section now links out to `vetrix-iq.html`, and the landing page links back to the portfolio
 - A second entry in `sitemap.xml` for the new page
+- A **"How It Works"** section on the VetriX•IQ landing page: a four-step numbered workflow (digitize records → assign roles → capture inspections → generate reports) with a connecting timeline line, addressing the migration/adoption question before the pricing/demo ask
+- A fourth "Qualification" screenshot mockup, completing visual coverage of all four platform modules
+- A compliance/standards badge row (ASME Section IX, ASNT SNT-TC-1A, API Inspection Practices) in the Features section for faster credibility scanning
+- A pricing FAQ entry, answered honestly (no public price list yet, scoped on the demo call) rather than left unaddressed
+- A persistent mobile call-to-action bar that appears after the hero and automatically hides once the visitor reaches the demo form, so a "Request a Demo" action is always one tap away on mobile without opening the nav menu
+
+### Fixed
+
+- Two inline `style` attributes (a header layout wrapper and a "no border" override) moved into CSS classes
 
 ## [1.0.0] — 2026-07-04
 
