@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VetriX IQ Qualification — Showcase</title>
+<style>
+/* ==== page shell (only for standalone preview — your portfolio already has this) ==== */
+:root{
+  --bg:#0F1722; --bg2:#0b1220;
+  --card:#131c2b; --card2:#0f1826;
+  --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.14);
+  --ink:#e7eef8; --muted:#93a1b5; --faint:#64748b;
+  --accent:#3b82f6; --amber:#f5b640; --green:#4ade80;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(1200px 700px at 80% -10%,#16273f 0%,var(--bg) 55%) no-repeat,var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+
+/* ======================= PORT THIS SECTION INTO YOUR PORTFOLIO ======================= */
+.vx{max-width:1120px;margin:0 auto;padding:96px 24px}
+.vx__eyebrow{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.vx__eyebrow::before{content:"";width:26px;height:1px;background:var(--line2)}
+.vx__title{margin:14px 0 6px;font-size:clamp(28px,4.4vw,44px);font-weight:800;letter-spacing:-.02em;line-height:1.05}
+.vx__title span{color:var(--accent)}
+.vx__lead{max-width:640px;color:var(--muted);font-size:16px;line-height:1.6;margin:0}
+.vx__stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.vx__pill{font-family:var(--mono);font-size:12px;color:var(--muted);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 12px}
+.vx__pill b{color:var(--ink);font-weight:600}
+
+.vx__grid{margin-top:40px;display:grid;gap:18px;grid-template-columns:repeat(6,1fr)}
+.vx-card{grid-column:span 2;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;cursor:zoom-in;
+  transition:transform .28s cubic-bezier(.2,.7,.2,1),border-color .28s,box-shadow .28s;
+  opacity:0;transform:translateY(16px)}
+.vx-card.in{opacity:1;transform:none}
+.vx-card:hover{transform:translateY(-4px);border-color:var(--line2);box-shadow:0 18px 40px -18px rgba(0,0,0,.7)}
+.vx-card--hero{grid-column:span 6}
+.vx-card__frame{position:relative;background:var(--bg2);border-bottom:1px solid var(--line)}
+.vx-card--hero .vx-card__frame{aspect-ratio:16/8.6}
+.vx-card__frame{aspect-ratio:4/3}
+.vx-card__frame img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.vx-card__code{position:absolute;top:12px;left:12px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:#0b1220;background:var(--amber);border-radius:6px;padding:4px 8px;font-weight:700}
+.vx-card__zoom{position:absolute;top:12px;right:12px;width:30px;height:30px;display:grid;place-items:center;background:rgba(11,18,32,.72);border:1px solid var(--line2);border-radius:8px;color:var(--ink);opacity:0;transition:opacity .25s}
+.vx-card:hover .vx-card__zoom{opacity:1}
+.vx-card__body{padding:16px 18px 20px}
+.vx-card__h{margin:0 0 6px;font-size:16px;font-weight:700;letter-spacing:-.01em}
+.vx-card__p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
+
+@media(max-width:760px){
+  .vx{padding:64px 18px}
+  .vx-card,.vx-card--hero{grid-column:1/-1}
+  .vx-card--hero .vx-card__frame{aspect-ratio:16/10}
+}
+
+/* lightbox */
+.vx-lb{position:fixed;inset:0;z-index:80;display:none;place-items:center;background:rgba(6,10,18,.86);backdrop-filter:blur(6px);padding:24px}
+.vx-lb.open{display:grid}
+.vx-lb__img{max-width:min(1000px,92vw);max-height:78vh;border-radius:12px;border:1px solid var(--line2);box-shadow:0 30px 80px -20px rgba(0,0,0,.8)}
+.vx-lb__cap{margin-top:14px;text-align:center;color:var(--muted);font-size:14px;max-width:640px}
+.vx-lb__cap b{color:var(--ink);font-weight:600}
+.vx-lb__x{position:absolute;top:18px;right:20px;width:40px;height:40px;border-radius:10px;border:1px solid var(--line2);background:var(--card);color:var(--ink);font-size:20px;cursor:pointer}
+@media(prefers-reduced-motion:reduce){.vx-card{transition:none;opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- ▼▼▼ COPY FROM HERE ▼▼▼ -->
+<section class="vx" id="vetrix-iq">
+  <p class="vx__eyebrow">Flagship product · in production</p>
+  <h2 class="vx__title">VetriX&nbsp;IQ <span>Qualification</span></h2>
+  <p class="vx__lead">A welding-qualification platform I designed and built end to end — a live ASME Section IX rules engine that computes qualified ranges, checks WPS/PQR compliance, and generates code-format documents. Deployed and used daily by an operating oil &amp; gas client.</p>
+
+  <div class="vx__stats">
+    <span class="vx__pill"><b>ASME</b> Section IX · B31.3 · API 1104</span>
+    <span class="vx__pill"><b>Next.js</b> · Supabase · Vercel</span>
+    <span class="vx__pill"><b>Live</b> client deployment</span>
+  </div>
+
+  <div class="vx__grid">
+    <!-- HERO: dashboard. Swap to 04-dashboard.jpg only if you have written client permission to show the account name. -->
+    <figure class="vx-card vx-card--hero" data-full="./assets/vetrix-iq/04-dashboard-redacted.jpg"
+            data-cap="<b>Production dashboard</b> — PQR, WPS and welder (WPQ) records for an operating client, tracked against ASME Section IX.">
+      <div class="vx-card__frame">
+        <span class="vx-card__code">Dashboard</span>
+        <span class="vx-card__zoom">⤢</span>
+        <img src="./assets/vetrix-iq/04-dashboard-redacted.jpg" alt="VetriX IQ Qualification production dashboard" loading="lazy">
+      </div>
+      <figcaption class="vx-card__body">
+        <h3 class="vx-card__h">Production dashboard</h3>
+        <p class="vx-card__p">PQR, WPS and welder (WPQ) records for an operating oil &amp; gas client — qualification status tracked live.</p>
+      </figcaption>
+    </figure>
+
+    <figure class="vx-card" data-full="./assets/vetrix-iq/01-pqr-qualified-ranges.jpg"
+            data-cap="<b>Rules engine</b> — qualified thickness, diameter, P-No and F-No derived automatically from the coupon, per ASME BPVC.IX-2025.">
+      <div class="vx-card__frame">
+        <span class="vx-card__code">QW-451.1</span>
+        <span class="vx-card__zoom">⤢</span>
+        <img src="./assets/vetrix-iq/01-pqr-qualified-ranges.jpg" alt="Automatic QW-451.1 qualified range computation" loading="lazy">
+      </div>
+      <figcaption class="vx-card__body">
+        <h3 class="vx-card__h">Automatic qualified ranges</h3>
+        <p class="vx-card__p">The engine derives qualified thickness, diameter and F-No straight from coupon data — no manual code lookups.</p>
+      </figcaption>
+    </figure>
+
+    <figure class="vx-card" data-full="./assets/vetrix-iq/02-wps-compliance-check.jpg"
+            data-cap="<b>Compliance checking</b> — the engine flags any WPS variable not covered by a qualified PQR (here an uncovered base P-No under QW-403) before the document is submitted.">
+      <div class="vx-card__frame">
+        <span class="vx-card__code">QW-403</span>
+        <span class="vx-card__zoom">⤢</span>
+        <img src="./assets/vetrix-iq/02-wps-compliance-check.jpg" alt="Pre-submission compliance check catching an uncovered P-No" loading="lazy">
+      </div>
+      <figcaption class="vx-card__body">
+        <h3 class="vx-card__h">Pre-submission compliance</h3>
+        <p class="vx-card__p">Every WPS is validated against its supporting PQRs — non-compliant variables are caught and explained, not missed.</p>
+      </figcaption>
+    </figure>
+
+    <figure class="vx-card" data-full="./assets/vetrix-iq/03-wps-qw482-print.jpg"
+            data-cap="<b>QW-482 generation</b> — a fully formatted, print-ready WPS with joint sketch, produced in one click from the record.">
+      <div class="vx-card__frame">
+        <span class="vx-card__code">QW-482</span>
+        <span class="vx-card__zoom">⤢</span>
+        <img src="./assets/vetrix-iq/03-wps-qw482-print.jpg" alt="One-click QW-482 WPS document generation" loading="lazy">
+      </div>
+      <figcaption class="vx-card__body">
+        <h3 class="vx-card__h">One-click QW-482</h3>
+        <p class="vx-card__p">Records become a print-ready WPS document — correct format, joint sketch and clause references included.</p>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="vx-lb" id="vxLightbox" aria-hidden="true">
+  <button class="vx-lb__x" aria-label="Close">×</button>
+  <div>
+    <img class="vx-lb__img" id="vxLbImg" src="" alt="">
+    <p class="vx-lb__cap" id="vxLbCap"></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var lb=document.getElementById('vxLightbox'),img=document.getElementById('vxLbImg'),cap=document.getElementById('vxLbCap');
+  function open(f,c){img.src=f;cap.innerHTML=c;lb.classList.add('open');lb.setAttribute('aria-hidden','false')}
+  function close(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');img.src=''}
+  document.querySelectorAll('.vx-card').forEach(function(el){
+    el.addEventListener('click',function(){open(el.dataset.full,el.dataset.cap)});
+  });
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('vx-lb__x'))close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+
+  // scroll reveal
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.vx-card').forEach(function(el,i){el.style.transitionDelay=(i*70)+'ms';io.observe(el)});
+})();
+</script>
+<!-- ▲▲▲ COPY TO HERE ▲▲▲ -->
+
+</body>
+</html>
